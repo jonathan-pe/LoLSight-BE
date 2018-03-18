@@ -1,0 +1,27 @@
+{
+    "name": "lolsight-be",
+    "version": "1.0.0",
+    "description": "backend server for lolsight",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jonathan Pe",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "cookie-parser": "^1.4.3",
+        "dotenv": "^5.0.0",
+        "express": "^4.16.2",
+        "express-handlebars": "^3.0.0",
+        "morgan": "^1.9.0",
+        "mysql2": "^1.5.2",
+        "os": "^0.1.1",
+        "path": "^0.12.7",
+        "request": "^2.83.0",
+        "sequelize": "^4.33.4",
+        "url": "^0.11.0",
+        "nodemon": "^1.17.2"
+    },
+    "devDependencies": {}
+}
