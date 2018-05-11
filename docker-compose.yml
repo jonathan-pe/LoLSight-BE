@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  mysql:
+    image: jonathanpe/docker-mysql
+    container_name: mysql
+    volumes:
+      - data:/var/lib/mysql
+      - ./conf/docker/mysql-conf.d:/etc/mysql/conf.d
+    ports:
+      - 3306:3306
+    restart: always
+    logging:
+      options:
+        max-size: "500k"
+        max-file: "2"
+  lolsight:
+    image: jonathanpe/lolsight
+    container_name: lolsight
+    restart: always
+    ports:
+      - 3001:3001
+    env_file: ${LOLSIGHT_REPO}/dotenv
+    depends_on:
+      - mysql
+    volumes:
+      - ${LOLSIGHT_REPO}/:/app
+volumes:
+  data:
+    external: true
+
+networks:
+  default:
+      external:
+          name: jpe
